@@ -1,0 +1,62 @@
+// ===================== Start Dromdown =====================
+//--- Impport Sass Files
+@use "../../sass/" as *;
+
+.dropdown {
+  position: relative;
+  z-index: 99;
+
+  //--- Toogle
+  &__toggle {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+
+    i {
+      font-size: 2rem;
+      color: var(--txt-color);
+    }
+    &_badge {
+      @include flex(center, center);
+      position: absolute;
+      top: -8px;
+      right: -5px;
+      height: 22px;
+      width: 22px;
+      border-radius: 50%;
+      background-color: var(--main-color);
+      color: var(--txt-white);
+      font-size: 0.7rem;
+      font-weight: 999;
+    }
+  }
+  //--- Content
+  &__content {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: -5px;
+    width: max-content;
+    max-width: 400px;
+    background-color: var(--main-bg);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transform-origin: top right;
+    transform: scale(0);
+    transition: transform .5s ease-in-out;
+
+    &.active {
+      transform: scale(1);
+      transition: transform .5s ease-in-out;
+    }
+  }
+  //--- Footer 
+  &__footer {
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
+  }
+}
+// ===================== End Dromdown =====================

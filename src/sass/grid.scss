@@ -1,0 +1,11 @@
+// ======================= Start Grid =======================
+//--- Variables
+$gridNum: 12;
+
+.row { display: flex; flex-wrap: wrap; margin: 0 -15px }
+
+//--- Make A Grid System
+@for $i from 1 through $gridNum {
+  .col-#{$i} { width: (100% / ($gridNum / $i)); padding: 0 15px }
+}
+// ======================= End Grid =======================

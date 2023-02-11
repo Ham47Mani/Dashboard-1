@@ -1,0 +1,56 @@
+// ===================== Start Status Card =====================
+//--- Import Sass Files
+@use "../../sass/" as *;
+
+.status-card {
+  @include flex(center, center);
+  padding: 30px;
+  margin-bottom: 30px;
+  background-color: var(--main-bg);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color .5s ease 0s;
+
+  &::before {
+    content: "";
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 50%;
+    background-image: linear-gradient(to top right, var(--main-color), var(--second-color));
+    position: absolute;
+    left: -50%;
+    top: 0;
+    transform: scale(0);
+    transition: transform .7s ease 0s;
+  }
+  &:hover {
+    color: var(--txt-white);
+    &::before { transform: scale(3) }
+  }
+
+  //--- Icon
+  &__icon {
+    @include flex(center, center);
+    width: 30%;
+    height: 100%;
+    font-size: 3rem;
+    z-index: 1;
+  }
+  //--- Info
+  &__info {
+    user-select: none;
+    flex-grow: 1;
+    text-align: center;
+    z-index: 1;
+    text-transform: capitalize;
+
+    h4 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+  }
+}
+// ===================== End Status Card =====================

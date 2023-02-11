@@ -1,0 +1,54 @@
+// ======================= Start Theme menu =======================
+.theme-menu {
+  position: fixed;
+  right: -300px;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  padding: 20px;
+  z-index: 101;
+  background-color: var(--main-bg);
+  box-shadow: var(--box-shadow);
+  transition: .3s ease-in-out;
+
+  &.active { right: 0 }
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    font-size: 1.5rem;
+  }
+  &__select {
+    margin-top: 40px;
+
+    .mode-list {
+      margin-top: 20px;
+
+      > li {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        & ~ li { margin-top: 10px }
+      }
+
+      &__color {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        margin-right: 10px;
+
+        i {
+          transform: scale(0);
+          transition: transform .4s ease;
+        }
+        &.active i { transform: scale(1) }
+      }
+    }
+  }
+}
+// ======================= End Theme menu =======================

@@ -1,0 +1,75 @@
+// ===================== Start TopNav =====================
+//--- Import Style File
+@use "../../sass/" as *;
+
+.topnav {
+  padding: 30px;
+  @include flex(space-between, center);
+  @include mobile { justify-content: flex-end }
+  height: var(--topnav-hight);
+
+  //--- Search
+  &__search {
+    position: relative;
+    background-color: var(--main-bg);
+    @include flex(center, center);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    @include mobile { display: none }
+
+    input {
+      height: 100%;
+      width: 100%;
+      padding: 10px 60px 10px 20px;
+      font-size: 1rem;
+      background-color: transparent;
+      color: var(--txt-color);
+      border-radius: var(--border-radius);
+    }
+    i {
+      position: absolute;
+      right: 10px;
+      font-size: 1.5rem;
+    }
+  }
+
+  //--- Right Box
+  &__right {
+    @include flex(center, center);
+
+    &__item {
+      margin-left: 30px;
+    }
+
+    .topnav__right__item__user {
+      @include flex(center, center);
+      align-items: center;
+
+      &__image {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 10px;
+        img { width: 100% }
+      }
+      &__name { font-weight: 600; font-size: 1rem }
+    }
+
+    .notification_item {
+      @include flex(flex-start, center);
+      padding: 15px 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--second-bg);
+      }
+      i {
+        margin-right: 20px;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+// ===================== End TopNav =====================

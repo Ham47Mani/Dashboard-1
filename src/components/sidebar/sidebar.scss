@@ -1,0 +1,55 @@
+// ===================== Start Sidebar =====================
+@use "../../sass/" as *;
+
+.sidebar {
+  min-width: var(--sidebar-width);
+  min-height: 100vh;
+  background-color: var(--main-bg);
+  box-shadow: var(--box-shadow);
+  transition: .3s ease-in-out;
+  position: sticky; 
+  top: 0;
+  z-index: 100;
+
+  //--- Logo
+  &__logo {
+    height: 150px;
+    @include flex(center, center);
+    cursor: pointer;
+    
+    img { width: 50px }
+    h1 {
+      color: #386667;
+      font-weight: bold;
+      font-size: 2rem;
+      margin-top: 10px;
+      user-select: none;
+      transform: scale(1);
+      transition: .5s ease;
+    }
+  }
+  //--- Sidebar Item
+  &__item {
+    padding: 0 20px;
+
+    &__inner {
+      padding: 15px 25px;
+      @include flex(flex-start, center);
+      font-weight: 600;
+      align-items: center;
+      transition: color .3s ease;
+      
+      i { margin-right: 10px; font-size: 1.5rem }
+      span { text-transform: capitalize }
+      &:hover {
+        color: var(--main-color)
+      }
+      &.active {
+        border-radius: var(--border-radius);
+        background-image: linear-gradient(to right, var(--main-color), var(--second-color));
+        color: var(--txt-white);
+      }
+    }
+  }
+}
+// ===================== End Sidebar =====================

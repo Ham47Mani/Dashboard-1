@@ -1,0 +1,108 @@
+// ============================= Start Global Rules =============================
+//--- Import Variables
+@use './sass/' as *;
+
+//--- Import Roboto Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+//--- Global Rules
+:root {
+  --main-bg : #{$main-bg};
+  --second-bg: #{$second-bg};
+  --txt-color: #{$txt-color};
+  --txt-white: #{$txt-white};
+  --main-color: #{$main-color};
+  --second-color: #{$second-color};
+  --box-shadow: #{$box-shadow};
+
+  --main-color-blue: #{$main-color-blue};
+  --second-color-blue: #{$second-color-blue};
+
+  --main-color-red: #{$main-color-red};
+  --second-color-red: #{$second-color-red};
+
+  --main-color-green: #{$main-color-green};
+  --second-color-green: #{$second-color-green};
+
+  --main-color-cyan: #{$main-color-cyan};
+  --second-color-cyan: #{$second-color-cyan};
+
+  --main-color-orange: #{$main-color-orange};
+  --second-color-orange: #{$second-color-orange};
+
+  //--- Themes
+  --main-bg-light: #{$main-bg-light};
+  --second-bg-white: #{$second-bg-white};
+  --txt-color-light: #{$txt-color-light};
+  --box-shadow-light: #{$box-shadow-light};
+
+  --main-bg-dark: #{$main-bg-dark};
+  --second-bg-dark: #{$second-bg-dark};
+  --txt-color-dark: #{$txt-color-dark};
+  --box-shadow-dark: #{$box-shadow-dark};
+
+  --sidebar-width: #{$sidebar-width};
+  --topnav-height: #{$topnav-height};
+  --border-radius: #{$border-radius};
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.7px;
+}
+a { 
+  text-decoration: none; color: unset;
+  &:hover { color: var(--main-color) }
+}
+button {
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  color: var(--txt-color);
+}
+ul {
+  list-style-type: none;
+}
+input {
+  border: 2px solid transparent;
+  outline: 0;
+  &:focus {
+    border: 2px solid var(--main-color);
+  }
+}
+.page-header {
+  margin-bottom: 40px;
+  text-transform: capitalize;
+}
+.full-hight { height: 100% }
+.card {
+  padding: 30px;
+  margin-bottom: 30px;
+  background-color: var(--main-bg);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+
+  &.full-hight { height: calc(100% - 30px) }
+
+  &__header { text-transform: capitalize }
+  & > div ~ div { margin-top: 30px }
+  &__footer { text-align: center; text-transform: capitalize }
+}
+
+.light-backgound { background-color: var(--main-bg-light); color: #000 }
+.dark-backgound { background-color: var(--main-bg-dark); color: #FFF }
+.blue-color { background-color: var(--main-color-blue); color: #FFF }
+.red-color { background-color: var(--main-color-red); color: #FFF }
+.cyan-color { background-color: var(--main-color-cyan); color: #FFF }
+.green-color { background-color: var(--main-color-green); color: #FFF }
+.orange-color { background-color: var(--main-color-orange); color: #FFF }
+// ============================= End Global Rules =============================

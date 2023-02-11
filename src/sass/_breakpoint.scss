@@ -1,0 +1,25 @@
+// =================== Start Breakpoint ===================
+//--- Import Variables
+@use "./variables" as *;
+
+//--- Small Mobile Screen
+@mixin smallMobile () {
+  @media only screen and (max-width: $extra-small-screen) {
+    @content;
+  }
+}
+
+//--- Mobile Screen
+@mixin mobile () {
+  @media only screen and (max-width: $small-screen) {
+    @content;
+  }
+}
+
+//--- Tablet Screen
+@mixin tablet () {
+  @media only screen and (max-width: $medium-screen) {
+    @content;
+  }
+}
+// =================== End Breakpoint ===================

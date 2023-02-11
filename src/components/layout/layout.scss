@@ -1,0 +1,58 @@
+// ========================= Start Layout =========================
+//--- Import Sass File
+@use "../../sass/" as *;
+
+:root {
+  @include mobile { font-size: 13px }
+}
+
+.layout {
+  color: var(--txt-color);
+  @include flex(center, flex-start);
+  position: relative;
+  transition: .5s ease;
+
+  @include tablet { 
+    [class*= "col-"]:not(.status [class*= "col-"]) { width: 100%}
+    .status { width: 100%}
+  }
+  @include mobile {
+    [class*= "col-"] { width: 100%}
+  }
+
+  &__content {
+    min-width: calc(100% - 300px);
+    background-color: var(--second-bg);
+    min-height: 100vh;
+    flex-grow: 1;
+    transition: .5s ease;
+
+    &__main {
+      padding: 30px;
+    }
+  }
+  &.close {
+    &__content { 
+      min-width: calc(100% - 120px);
+      @include mobile { min-width: calc(100% - 80px) }
+    }
+    .sidebar {
+      min-width: 120px;
+      transition: .3s ease-in-out;
+
+      @include mobile { min-width: 80px; }
+
+      &__logo img { width: 40px }
+      h1 { transform: scale(0); display: none; }
+      &__item {
+        @include flex(center, center);
+        padding: 0; 
+        i { margin-right: auto }
+        span { display: none }
+
+        &__inner { padding: 15px }
+      }
+    }
+  }
+}
+// ========================= End Layout =========================
